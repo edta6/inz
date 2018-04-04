@@ -1,0 +1,733 @@
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 40px auto;
+  font-family: Raleway;
+  padding: 25px;
+  width: 60%;
+  min-width: 300px;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 3px solid #337fed;
+}
+
+#regForm2 {
+  background-color: #ffffff;
+  margin: 40px auto;
+  font-family: Raleway;
+  padding: 25px;
+  width: 60%;
+  min-width: 300px;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 3px solid #337fed;
+}
+
+
+input {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+.invalid {
+  background-color: #ffdddd;
+  border: 1px solid red;
+  color: red;
+  padding-bottom: 10px;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    position: relative;
+}
+
+div.imgcontainer h2 {
+	margin: 0px; 
+}
+
+/* The Close Button (x) */
+.close {
+	position: absolute;
+    left: 490px;
+    top: -30px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Style dla okna modalnego i wyświetlania błędów */
+
+.box_input {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+	width:100%;
+}
+
+div.box_input p {
+	margin: auto;
+	padding: 10px 10px 0 10px; 
+}
+
+div.box_input.box_margin p {
+	width: 33%;
+}
+
+.errorbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.error {
+	display: none;
+	font-size: 10px;
+	margin: 0;
+	color: red;
+}
+
+/* spl=small padding left */
+.error_spl {
+	padding-left: 25px;
+}
+
+/* lpl=large padding left */
+.error_lpl {
+	padding-left: 265px;
+}
+
+.error_margin {
+	margin: auto;
+	padding-left: 0px;
+}
+
+.error_text {
+	text-align: center;
+	padding-top: 3px;
+}
+
+.error_wyp {
+	color:red;
+	border: 0.5px solid red;
+}
+
+/* Style do wyglądu input type=submit w tabelce */
+.tab_user_input {
+	padding: 5px;
+	font-size: 14px;
+	color: white;
+	width: 100%;
+	border: 0.5px solid #0b1f8f;
+	background-color: #0D1627;
+}
+
+.tab_miejsc_input {
+	color: white;
+	width: 100%;
+	border: 0.5px solid #0b1f8f;
+	background-color: #0D1627;
+}
+
+.tab_miejsc_input_del {
+	color: red;
+	font-weight: bold;
+	width: 100%;
+	border: 0.5px solid #0b1f8f;
+	background-color: #0D1627;
+}
+
+#users_head tbody tr th {
+	padding: 10px 0;
+	border: 1px solid #5a0b56;
+	font-weight: bold;
+	color: white;
+}
+
+#users_body tbody tr th.row_year {
+	padding: 10px 0;
+	font-weight: bold;
+	background-color: #0e3174;
+}
+
+#Nieaktywny {
+	color: red;
+}
+
+#Aktywny {
+	color: green;
+}
+
+#users_head {
+	background-color: #0D1627;
+}
+
+#users_body tbody tr th {
+	color: white;
+}
+
+#users_body  tr:first th {
+	padding: 5px 0; 
+}
+
+#users_body  tr th {
+	padding: 0;
+}
+
+.container_tab_users {
+	margin: auto;
+	width: 85%;
+	height: 300px; 
+	overflow-y: scroll;	
+}
+
+.users_h_col1 {
+	width: 6%
+}
+
+.users_h_col2 {
+	width: 34%
+}
+
+.users_h_col3 {
+	width: 20%
+}
+
+.users_h_col4 {
+	width: 20%
+}
+
+.users_h_col5 {
+	width: 20%
+}
+
+.pupils_h_col1 {
+	width: 5%
+}
+
+.pupils_h_col2 {
+	width: 25%
+}
+
+.pupils_h_col3 {
+	width: 15%
+}
+
+.table_users_scroll {
+	height: 300px; 
+	overflow-y: scroll;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 125px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	font-weight: normal;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -60px;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+/* Styl dla strony z wychowankami odnośnie pola select -> wybór wychowawcy */
+
+
+.users_sel {
+   width: 200px;
+   height: 34px;
+   overflow: hidden;
+   border: 1px solid #ccc;
+}
+
+.users_sel select {
+   width: 200px;
+   height: 34px;
+}
+
+.box_input_sel {
+  margin-top: 15px;
+}
+
+.box_input_sel p {
+  float: left;
+  margin: 8px 0;
+  padding: 0 40px;
+  width: 170px;
+}
+
+.box_input_sel textarea {
+	resize: none;
+	width: 380px;
+	margin-left: 60px;
+}
+
+.box_input_time {
+	padding-top: 10px;
+}
+
+.box_input_time p {
+	width: 35%;
+	float: left;
+	margin: 8px;
+	padding-left: 25px;
+}
+
+.box_input_time input.timepicker.hasWickedpicker {
+	width: 50px;
+	display: none;
+}
+
+.box_input_time input.timepicker2.hasWickedpicker {
+	width: 50px;
+	display: none;
+}
+
+#timepicker3 {
+	width: 50px;
+	display: block;
+}
+
+/* Styl dla strony z miejscowościami */
+
+.miejs_tab_button {
+  width: 80%;
+  margin: auto;
+  padding: 20px 0;
+  color: white;
+}
+
+div.miejs_tab_button p {
+	margin: 15px 0 10px 0;
+}
+
+div.miejs_tab_button > a:hover {
+	color: red;
+}
+
+div.miejs_tab_button > a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 10px 0;
+}
+
+#searchMie{
+	margin: 10px 0;
+}
+
+div.miejs_tab_button input.miejs_inp {
+	padding: 5px;
+	font-size: 14px;
+}
+
+.place_h_col1 {
+	width: 20%
+}
+
+.place_h_col2 {
+	width: 10%
+}
+
+.place_h_col3 {
+	width: 15%
+}
+
+.ter_nap {
+	color: white;
+	text-align: center;
+	padding-top: 50px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.addTOplace {
+	width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  color: white;
+	border: 1px solid black;
+}
+
+div.addTOplace > p:first-child {
+	font-weight: bold;
+	font-size: 16px;
+	margin-top: 0;
+}
+
+div.addTOplace p.woj {
+	font-weight: bold;
+	font-size: 16px;
+	color: #06fb06;
+}
+
+div.addTOplace p.miejsc {
+	margin: 0px;
+	padding-left: 10px;
+}
+
+
+.tooltipL {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltipL .tooltiptextL {
+    visibility: hidden;
+    width: 250px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 150%;
+}
+
+.tooltipL .tooltiptextL::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+.tooltipL:hover .tooltiptextL {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ------------------------------------------- 
+ Do Raportów templatka.
+ */
+
+.raptemp_col1 {
+	width: 6%;
+}
+
+.raptemp_col2 {
+	width: 12%;
+}
+
+.raptemp_col3 {
+	width: 70%;
+}
+/* ------------------------------------------
+ 
+ Style do Raportu głównego
+*/
+
+#box_all_raport {
+	width: 90%;
+	margin: 30px auto;
+/*	border: 1px solid white;*/
+	display: flex;
+  flex-direction: row;
+}
+
+#box_raport {
+	width: 98%;
+	padding: 15px 0;
+}
+
+#box_wpis {
+	width: 98%;
+	padding: 15px 0;
+	margin: 5px auto;
+	color: white;
+}
+
+.box_raport2 {
+	width: 80%;
+	border: 1px solid black;
+	margin-right: 10px;
+}
+
+#box_menu_raport {
+	width: 20%;
+}
+
+div#box_menu_raport button.myButton {
+	width: 100%;
+}
+
+div#box_menu_raport button.myButton:hover {
+	color: red;
+}
+
+div#box_menu_raport > ol > li {
+	width: 100%;
+	color: yellow;
+	font-weight: bold;
+}
+
+#tab_raport {
+	width: 98%;
+	border: none;
+}
+
+table#tab_raport > tbody > tr >th {
+	border: none;
+	padding: 0;
+} 
+
+table#tab_wpis > tbody > tr > th {
+	color: white
+} 
+
+.tab_th {
+	color: white;
+	display: flex;
+  flex-direction: row;
+}
+
+.tab_napis_1 {
+	font-weight: bold;
+	font-size: 16px;
+	margin: auto;
+	padding: 2px 0;
+}
+
+.tab_napis_2 {
+	color: white;
+	display: contents;
+	margin: 0 auto;
+}
+
+.tab_napis_3 {
+	margin: 0 15px;
+	padding: 10px 0;
+	width: 40%;
+	text-align: left;
+}
+
+.tab_napis_4 {
+	padding: 10px 0;
+	color: red;
+	width: 70%;
+	text-align: left;
+}
+
+.tab_napis_5 {
+	margin: 0 15px;
+	padding: 10px 0;
+	width: 55%;
+	text-align: left;
+}
+
+.tab_napis_6 {
+	margin: 0 15px;
+	color: red;
+	width: 100%;
+	text-align: left;
+}
+
+.tab_napis_7 {
+	padding: 2px 0;
+}
+
+.tab_liczba {
+	border: 1px solid black;
+	padding: 10px;
+	color: red;
+	margin: 2px;
+	font-weight: bold;
+}
+
+.tab_color {
+	color: red;
+}
+
+#tab_wpis {
+	width: 100%;
+}
+
+.box_input_rap {
+	margin: 10px 0;
+}
+
+.box_check {
+	margin: 1.5px 5px 1.5px 5px;
+	float: left;
+}
+
+div.box_input_rap_wew > p {
+	margin: 0;
+	float: left;
+}
+
+.box_input_rap_wew {
+	margin: 11.5px 0 11.5px 10px;
+	width: 45%;
+	float: left;
+}
+
+.box_input_rap_header {
+	margin: 10px;
+	width: 100%;
+	display: flex;
+  flex-direction: row;
+	text-align: center;
+}
+
+div.box_input_rap_header > p {
+	margin: 0;
+	width: 40%;
+	padding: 0 10px;
+	font-weight: bold;
+}
+
+.box_time{
+	width: 15%;
+}
+
+.box_rap_one_user {
+	margin: 10px;
+	width: 100%;
+}
+
+/* Styl tabelki raportu */
+#tab_wpis tbody tr.tab_wpis_first_row th {
+	padding: 10px 0;
+	border: 1px solid #5a0b56;
+	color: white;
+	background-color: #0D1627;
+	text-align: center;
+}
+
+#tab_wpis tbody tr.tab_wpis_first_row th.wpis_col3 {
+	border-right-color: black;
+}
+
+#tab_wpis tbody tr.tab_wpis_first_row th.wpis_col1 {
+	border-left-color: black;
+}
+
+.wpis_col1 {
+	width: 13%;
+	border-bottom: none;
+	border-top: none;
+	padding: 2px 0;
+}
+
+.wpis_col2 {
+	width: 79%;
+	text-align: left;
+	padding: 2px 0 2px 10px;
+	border-bottom: none;
+	border-top: none;
+}
+
+.wpis_col3 {
+	width: 7%;
+	padding: 2px 0;
+	background-color: #0D1627;
+}
+
+.wpis_arch_col1 {
+	width: 15%;
+	border-bottom: none;
+	border-top: none;
+	padding: 2px 0;
+}
+
+.wpis_arch_col2 {
+	width: 84%;
+	text-align: left;
+	padding: 2px 0 2px 10px;
+	border-bottom: none;
+	border-top: none;
+}
+
+.wpis_user_input {
+	border: none;
+}
+
+#Przywróć {
+	color: red;
+}
+
+.button_nav_archiwum {
+	display: flex;
+  flex-direction: row;
+	width: 80%;
+	margin: 20px auto;
+	padding: 10px;
+}
+
+#back_arch {
+	margin-left: 20px;
+}
+
+#next_arch {
+	padding-left: 70%;
+}

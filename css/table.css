@@ -1,0 +1,297 @@
+html { 
+	overflow-y:auto;
+	overflow-x:hidden;
+	min-height:650px;
+}
+
+body { 
+	font-family: 'Open Sans', sans-serif;
+	background: #092756;
+	background: 
+	-moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),
+	-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), 
+	-moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
+	background: 
+	-webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), 
+	-webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: 
+	-o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), 
+	-o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), 
+	-o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: 
+	-ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), 
+	-ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), 
+	-ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: 
+	-webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), 
+	linear-gradient(135deg,  #670d10 0%,#092756 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+}
+
+/* Nagłówek z godziną i przyciskiem wyloguj oraz imie i nazwisko user */
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  color: #ffffff;
+  margin:auto
+}
+
+.header_container {
+	width: 44%;
+	padding: 10px 0;
+}
+
+.btn_exit {
+	padding: 20px 10px;
+}
+/*END----------------------*/
+
+/*Sekcja Menu  */
+.menu {
+	width: 95%;
+	margin: auto;
+}
+
+/* wygląd MENU - wygląd głównego elementu - ol */
+ol {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+	height: 2em;
+	line-height: 2em;
+	text-align: center;
+}
+
+/* wygląd wszystkich elementów - a - znajdujących się w elemencie - ol */
+ol a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	padding: 0 10px;
+}
+
+/* wygląd elementów - li - wszystkich dzieci elementu - ol */
+ol > li {
+	float: left;
+	margin-left: 1px;
+	height: 2em;
+	border: 0.5px solid #0b1f8f;
+	background-color: #0D1627;
+	color: white;
+}
+
+/* wygląd elementu - li - pierwszego dziecka elementu - ol */
+ol > li:first-child {
+	margin-left:0;
+}
+
+/* wygląd elementów - li - wszystkich dzieci elementu - ol - po najechaniu kursorem myszki na element - li */
+ol > li:hover {
+	color: red;
+}
+
+/* wygląd elementu - a - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+ol > li:hover > a {
+	color: red;
+}
+
+/* wygląd elementu - ul - dziecka elementu - li - będącego dzieckiem elementu - ol - po najechaniu kursorem myszki na element - li */
+ol > li:hover > ul {
+	display: block;
+}
+
+/* ------------------------CZĘŚĆ-ROZWIJANA-MENU------------------------ */
+/* wygląd głównych rozwijanych elementów - ul */
+ol > li > ul {
+	display:none;
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+
+/* wygląd elementu - li - w części rozwijanej */
+ol > li > ul > li {
+	position:relative;
+	background-color:#0D1627;
+}
+
+/* wygląd elementu - a - w części rozwijanej */
+ol > li > ul > li > a {
+	border-top:1px solid  #0b1f8f;
+}
+
+/* wygląd elementu - li - w części rozwijanej, po najechaniu kursorem myszki na dany element - li */
+ol > li > ul > li:hover {
+	/* background-color:#DDD; */
+}
+
+/* wygląd elementu - a - w części rozwijanej, po najechaniu kursorem myszki na element - li */
+ol > li > ul > li:hover > a {
+	color: green;
+}
+/*END----------------------*/
+
+/*Section Przyciski do Książki wyjść i wyjazdów oraz szukanie*/
+.button_table {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+.button_table > div{
+  flex: 1 1 auto;
+}
+
+.button_table_child {
+  width: 45%;
+  padding: 15px 0;
+}
+
+.button_table_child > select {
+	width: 45%;
+	padding: .55em .5em;
+}
+
+.search_table{
+	width: 45%;
+	background-image: url(../png/searchicon.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	text-indent: 40px;
+	background-color: white;
+}
+/*END----------------------*/
+
+/* Tabela książka wyjść i wyjazdów */
+.container_full_table {
+	width: 90%;
+	margin: auto;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 100%;
+}
+
+th,td {
+	padding: 5px 0; 
+	font-size: 0.85em;
+	font-weight: normal;
+	text-align: center;
+	border: 1px solid black;
+	color: silver;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+table#users_body > tbody > tr#retexi > th {
+	font-weight: normal;
+	font-size: 12px;
+	padding: 5px 0 5px 10px;
+	text-align: left;
+}
+
+table#users_body > tbody > tr#retexi > th.kol1 {
+	text-align: center;
+	padding-left: 0;
+} 
+
+table#users_body > tbody > tr#retexi > th.kol4 {
+	text-align: center;
+	padding-left: 0;
+} 
+
+table#users_body > tbody > tr#retexi > th.kol5 {
+	text-align: center;
+	padding-left: 0;
+} 
+
+.kol1 {
+	width: 4.9%
+}
+
+.kol2 {
+	width: 21.9%
+}
+
+.kol3 {
+	width: 19.8%
+}
+
+.kol4 {
+	width: 8%
+}
+
+.kol5 {
+	width: 5%
+}
+
+.kol6 {
+	width: 21.9%
+}
+
+.kol7 {
+	width: 5.9%
+}
+
+.kol45 {
+	width: 13%
+}
+
+.table_body_scroll {
+	height: 300px; 
+	overflow-y: scroll;
+	border: 1px solid black;
+}
+
+/* Klasa przycisków */
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0));
+	background:-moz-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+	background:-webkit-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+	background:-o-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+	background:-ms-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0',GradientType=0);
+	background-color:#3d94f6;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #337fed;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #1570cd;
+}
+
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6));
+	background:-moz-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-webkit-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-o-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-ms-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6',GradientType=0);
+	background-color:#1e62d0;
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+/*END----------------------*/
+
